@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://pockyji.github.io/"/>
-  <updated>2019-01-18T13:40:22.463Z</updated>
+  <updated>2019-02-27T08:13:05.667Z</updated>
   <id>http://pockyji.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode456 132 pattern</title>
+    <link href="http://pockyji.github.io/2019/02/27/Leetcode456-132-pattern/"/>
+    <id>http://pockyji.github.io/2019/02/27/Leetcode456-132-pattern/</id>
+    <published>2019-02-27T07:26:04.000Z</published>
+    <updated>2019-02-27T08:13:05.667Z</updated>
+    
+    <content type="html"><![CDATA[<p>##题目描述##<br><a href="https://leetcode.com/problems/132-pattern/" target="_blank" rel="noopener">https://leetcode.com/problems/132-pattern/</a><br>题目大意是在一个数组中如果存在一个子序列 [ai,aj,ak] 满足 i&lt;j&lt;k 且 ai&lt;ak&lt;aj ,则返回True,否则返回False。</p><p>##我的解法##<br>我自己的解法是对于一个数，假设它为ak,找到前面离它最近的比它大的数，则为满足条件的aj,并且可以为ai的选择提供尽可能大的空间。对于ai,利用统计的dmin[j-1](0~j-1中的最小值）来判断是否存在满足条件的ai。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool find132pattern(vector&lt;int&gt;&amp; nums)&#123;</span><br><span class="line">        if(nums.size() &lt;= 2) return false;</span><br><span class="line">        int len = nums.size();</span><br><span class="line">        int dmin[len+10];</span><br><span class="line">        dmin[0] = nums[0];</span><br><span class="line">        for(int i = 2; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dmin[i-1] = min(dmin[i-2],nums[i-1]);</span><br><span class="line">            for(int j = i-1; j &gt; 0; j--)</span><br><span class="line">            &#123;</span><br><span class="line">                if(nums[j] &gt; nums[i])</span><br><span class="line">                &#123;</span><br><span class="line">                    if(dmin[j-1] &lt; nums[i])&#123;</span><br><span class="line">                        return true;</span><br><span class="line">                    &#125;else&#123;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><p>##优质解法##<br>从后往前遍历数组，栈st用于维护当前未找到比它们大的aj的ak待定队列,s3用于记录当前满足条件的最大的ak。当遍历到的数小于s3时，即存在132pattern子序列。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bool find132pattern(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">    int s3 = INT_MIN;</span><br><span class="line">    stack&lt;int&gt; st;</span><br><span class="line">    for( int i = nums.size()-1; i &gt;= 0; i -- )&#123;</span><br><span class="line">        if( nums[i] &lt; s3 ) return true;</span><br><span class="line">        else while( !st.empty() &amp;&amp; nums[i] &gt; st.top() )&#123; </span><br><span class="line">          s3 = st.top(); st.pop(); </span><br><span class="line">        &#125;</span><br><span class="line">        st.push(nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##题目描述##&lt;br&gt;&lt;a href=&quot;https://leetcode.com/problems/132-pattern/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/132-pattern
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>HTTP协议知识小记</title>
