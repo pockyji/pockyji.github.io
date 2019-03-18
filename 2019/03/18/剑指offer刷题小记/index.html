@@ -96,25 +96,22 @@
 
 
 
-  <meta name="description" content="题目描述https://leetcode.com/problems/132-pattern/题目大意是在一个数组中如果存在一个子序列 [ai,aj,ak] 满足 i&amp;lt;j&amp;lt;k 且 ai&amp;lt;ak&amp;lt;aj ,则返回True,否则返回False。 我的解法我自己的解法是对于一个数，假设它为ak,找到前面离它最近的比它大的数，则为满足条件的aj,并且可以为ai的选择提供尽可能大的空间。对">
-<meta name="keywords" content="算法题">
+  <meta name="keywords" content="算法题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode456 132 pattern">
-<meta property="og:url" content="http://pockyji.github.io/2019/02/27/Leetcode456-132-pattern/index.html">
+<meta property="og:title" content="剑指offer刷题小记">
+<meta property="og:url" content="http://pockyji.github.io/2019/03/18/剑指offer刷题小记/index.html">
 <meta property="og:site_name" content="pockyji upup">
-<meta property="og:description" content="题目描述https://leetcode.com/problems/132-pattern/题目大意是在一个数组中如果存在一个子序列 [ai,aj,ak] 满足 i&amp;lt;j&amp;lt;k 且 ai&amp;lt;ak&amp;lt;aj ,则返回True,否则返回False。 我的解法我自己的解法是对于一个数，假设它为ak,找到前面离它最近的比它大的数，则为满足条件的aj,并且可以为ai的选择提供尽可能大的空间。对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T06:54:31.795Z">
+<meta property="og:updated_time" content="2019-03-18T06:54:38.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode456 132 pattern">
-<meta name="twitter:description" content="题目描述https://leetcode.com/problems/132-pattern/题目大意是在一个数组中如果存在一个子序列 [ai,aj,ak] 满足 i&amp;lt;j&amp;lt;k 且 ai&amp;lt;ak&amp;lt;aj ,则返回True,否则返回False。 我的解法我自己的解法是对于一个数，假设它为ak,找到前面离它最近的比它大的数，则为满足条件的aj,并且可以为ai的选择提供尽可能大的空间。对">
+<meta name="twitter:title" content="剑指offer刷题小记">
 
 
 
 
 
 
-  <link rel="canonical" href="http://pockyji.github.io/2019/02/27/Leetcode456-132-pattern/">
+  <link rel="canonical" href="http://pockyji.github.io/2019/03/18/剑指offer刷题小记/">
 
 
 
@@ -124,7 +121,7 @@
   };
 </script>
 
-  <title>Leetcode456 132 pattern | pockyji upup</title>
+  <title>剑指offer刷题小记 | pockyji upup</title>
   
 
 
@@ -340,7 +337,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://pockyji.github.io/2019/02/27/Leetcode456-132-pattern/">
+    <link itemprop="mainEntityOfPage" href="http://pockyji.github.io/2019/03/18/剑指offer刷题小记/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pockyji">
@@ -357,7 +354,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode456 132 pattern
+          <h1 class="post-title" itemprop="name headline">剑指offer刷题小记
 
               
             
@@ -383,24 +380,12 @@
                 
               
 
-              <time title="创建时间：2019-02-27 15:26:04" itemprop="dateCreated datePublished" datetime="2019-02-27T15:26:04+08:00">2019-02-27</time>
+              <time title="创建时间：2019-03-18 14:53:40 / 修改时间：14:54:38" itemprop="dateCreated datePublished" datetime="2019-03-18T14:53:40+08:00">2019-03-18</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-18 14:54:31" itemprop="dateModified" datetime="2019-03-18T14:54:31+08:00">2019-03-18</time>
               
             
           </span>
@@ -434,10 +419,7 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://leetcode.com/problems/132-pattern/" target="_blank" rel="noopener">https://leetcode.com/problems/132-pattern/</a><br>题目大意是在一个数组中如果存在一个子序列 [ai,aj,ak] 满足 i&lt;j&lt;k 且 ai&lt;ak&lt;aj ,则返回True,否则返回False。</p>
-<h2 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h2><p>我自己的解法是对于一个数，假设它为ak,找到前面离它最近的比它大的数，则为满足条件的aj,并且可以为ai的选择提供尽可能大的空间。对于ai,利用统计的dmin[j-1](0~j-1中的最小值）来判断是否存在满足条件的ai。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool find132pattern(vector&lt;int&gt;&amp; nums)&#123;</span><br><span class="line">        if(nums.size() &lt;= 2) return false;</span><br><span class="line">        int len = nums.size();</span><br><span class="line">        int dmin[len+10];</span><br><span class="line">        dmin[0] = nums[0];</span><br><span class="line">        for(int i = 2; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dmin[i-1] = min(dmin[i-2],nums[i-1]);</span><br><span class="line">            for(int j = i-1; j &gt; 0; j--)</span><br><span class="line">            &#123;</span><br><span class="line">                if(nums[j] &gt; nums[i])</span><br><span class="line">                &#123;</span><br><span class="line">                    if(dmin[j-1] &lt; nums[i])&#123;</span><br><span class="line">                        return true;</span><br><span class="line">                    &#125;else&#123;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h2 id="优质解法"><a href="#优质解法" class="headerlink" title="优质解法"></a>优质解法</h2><p>从后往前遍历数组，栈st用于维护当前未找到比它们大的aj的ak待定队列,s3用于记录当前满足条件的最大的ak。当遍历到的数小于s3时，即存在132pattern子序列。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bool find132pattern(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">    int s3 = INT_MIN;</span><br><span class="line">    stack&lt;int&gt; st;</span><br><span class="line">    for( int i = nums.size()-1; i &gt;= 0; i -- )&#123;</span><br><span class="line">        if( nums[i] &lt; s3 ) return true;</span><br><span class="line">        else while( !st.empty() &amp;&amp; nums[i] &gt; st.top() )&#123; </span><br><span class="line">          s3 = st.top(); st.pop(); </span><br><span class="line">        &#125;</span><br><span class="line">        st.push(nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        
       
     </div>
 
@@ -473,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/18/HTTP协议知识小记/" rel="next" title="HTTP协议知识小记">
-                <i class="fa fa-chevron-left"></i> HTTP协议知识小记
+              <a href="/2019/02/27/Leetcode456-132-pattern/" rel="next" title="Leetcode456 132 pattern">
+                <i class="fa fa-chevron-left"></i> Leetcode456 132 pattern
               </a>
             
           </div>
@@ -482,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/18/剑指offer刷题小记/" rel="prev" title="剑指offer刷题小记">
-                剑指offer刷题小记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,17 +507,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -598,23 +567,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的解法"><span class="nav-number">2.</span> <span class="nav-text">我的解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优质解法"><span class="nav-number">3.</span> <span class="nav-text">优质解法</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
