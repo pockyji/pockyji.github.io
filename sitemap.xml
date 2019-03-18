@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pockyji.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-03-18T07:05:20.482Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://pockyji.github.io/about/index.html</loc>
+    
+    <lastmod>2019-03-18T07:03:05.800Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://pockyji.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-03-18T07:02:46.275Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://pockyji.github.io/2019/01/18/HTTP%E5%8D%8F%E8%AE%AE%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/</loc>
     
     <lastmod>2019-03-18T06:54:49.627Z</lastmod>
